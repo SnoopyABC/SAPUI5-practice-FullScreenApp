@@ -3,7 +3,24 @@
     xmlns="sap.m">
     <Page id="People">
         <content>
-            <Text id="PeopleText" text="TestText"></Text>
+            <Table id="peopleTableId" items="{path: '/People'}">
+                <columns>
+                    <Column >
+                        <Text text="{i18n>peopleTableFirstName}"></Text>
+                    </Column>
+                    <Column >
+                        <Text text="{i18n>peopleTableLastName}"></Text>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem press="onPress" type="Navigation">
+                        <cells>
+                            <ObjectIdentifier title="{FirstName}"></ObjectIdentifier>
+                            <Text text="{LastName}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
         </content>
     </Page>
 </mvc:View>
