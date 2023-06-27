@@ -1,0 +1,12 @@
+<mvc:View controllerName="fullscreenapp.controller.NotFound"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="NotFoundPage">
+        <IllustratedMessage
+            id="NotFoundPage-IllustratedMessage"
+			title="{i18n>notFoundTitle}"
+			description="{i18n>notFoundDescription}"
+            illustrationType="sapIllus-PageNotFound">
+		</IllustratedMessage>
+    </Page>    
+</mvc:View>
