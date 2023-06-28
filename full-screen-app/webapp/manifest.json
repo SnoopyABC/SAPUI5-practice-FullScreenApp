@@ -107,6 +107,13 @@
           "target": [
             "TargetPeople"
           ]
+        },
+        {
+          "name": "RoutePeopleAdressInfo",
+          "pattern": "addressInfo/{peopleId}",
+          "target": [
+            "TargetPeopleAdressInfo"
+          ]
         }
       ],
       "targets": {
@@ -116,6 +123,12 @@
           "clearControlAggregation": false,
           "viewId": "People",
           "viewName": "People"
+        },
+        "TargetPeopleAdressInfo": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewName": "PeopleAddressInfo"
         },
         "TargetNotFound": {
           "transition": "show",

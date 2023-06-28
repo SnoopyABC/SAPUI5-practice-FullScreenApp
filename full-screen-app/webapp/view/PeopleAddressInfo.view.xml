@@ -1,0 +1,26 @@
+<mvc:View controllerName="fullscreenapp.controller.PeopleAddressInfo"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="peopleAddressInfoPage">
+        <content>
+            <Table id="peopleAddressInfoPage-adressInfoTable" items="{path: 'AddressInfo'}">
+                <columns>
+                    <Column >
+                        <Text text="{i18n>peopleAddressInfoAddress}"></Text>
+                    </Column>
+                    <Column >
+                        <Text text="{i18n>peopleAddressInfoCity}"></Text>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem press="onPress" type="Navigation">
+                        <cells>
+                            <ObjectIdentifier title="{Address}"></ObjectIdentifier>
+                            <Text text="{City/Name}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

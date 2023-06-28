@@ -10,6 +10,13 @@ sap.ui.define([
         return BaseController.extend("fullscreenapp.controller.People", {
             onInit: function () {
 
+            },
+
+            onPress: function(oEvent){
+                var sPeopleId = oEvent.getSource().getBindingContext().getProperty("UserName");
+                this.getRouter().navTo("RoutePeopleAdressInfo", {
+                    "peopleId": sPeopleId
+                }, true);
             }
         });
     });
