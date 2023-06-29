@@ -15,9 +15,24 @@ sap.ui.define([
                 var peopleId = oEvent.getParameter('arguments').peopleId;
                 var oView = this.getView();
 
-                this.getView().bindElement({
-                    path: "/People('" +  peopleId + "')"
+                oView.bindElement({
+                    path: "/People('" +  peopleId + "')",
+                    events : {
+                        change: this._onBindingChange.bind(this),
+                        dataRequested: function (oEvent) {
+                            oView.setBusy(true);
+                        },
+                        dataReceived: function (oEvent) {
+                            oView.setBusy(false);
+                        }
+                    }
                 })
+            },
+            _onBindingChange : function (oEvent) {
+                // No data for the binding
+                if (!this.getView().getBindingContext()) {
+                    this.getRouter().getTargets().display("notFound");
+                }
             }
         });
     });
